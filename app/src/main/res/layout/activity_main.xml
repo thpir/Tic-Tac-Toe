@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tictactoebackground2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/soupofjustice"
+            android:text="@string/welcome_to_tic_tac_toe"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/startGame"
+            android:layout_width="30mm"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/welcomeText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:backgroundTint="#0099CC"
+            android:fontFamily="@font/soupofjustice"
+            android:text="@string/button_start_game_text"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:ignore="InOrMmUsage" />
+
+        <ImageButton
+            android:id="@+id/settings"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_above="@+id/textSettings"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center"
+            android:src="@drawable/button_settings" />
+
+        <TextView
+            android:id="@+id/textSettings"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/account"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/soupofjustice"
+            android:gravity="center"
+            android:text="@string/textview_settings_text"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
+
+        <ImageButton
+            android:id="@+id/account"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_above="@+id/textAccount"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center"
+            android:src="@drawable/button_account" />
+
+        <TextView
+            android:id="@+id/textAccount"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rulebook"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/soupofjustice"
+            android:gravity="center"
+            android:text="@string/textview_account_text"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
+
+        <ImageButton
+            android:id="@+id/rulebook"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_above="@+id/textRulebook"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center"
+            android:src="@drawable/button_rules" />
+
+        <TextView
+            android:id="@+id/textRulebook"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/soupofjustice"
+            android:gravity="center"
+            android:text="@string/textview_rulebook_text"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

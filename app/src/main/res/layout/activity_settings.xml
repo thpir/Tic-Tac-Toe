@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbackground"
+    tools:context=".Settings">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_view_spinner1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:fontFamily="@font/soupofjustice"
+                    android:text="@string/select_grid_size"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="200dp"
+                    android:layout_height="25sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="20dp" />
+
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_view_spinner1"
+                    android:layout_margin="20dp"
+                    android:fontFamily="@font/soupofjustice"
+                    android:gravity="left"
+                    android:text="@string/enable_single_player_mode"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    tools:ignore="RtlHardcoded,UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/switch2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/switch1"
+                    android:layout_margin="20dp"
+                    android:fontFamily="@font/soupofjustice"
+                    android:gravity="left"
+                    android:text="@string/enable_screen_always_on"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    tools:ignore="RtlHardcoded,UseSwitchCompatOrMaterialXml" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/SaveSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:backgroundTint="#004055"
+            android:fontFamily="@font/soupofjustice"
+            android:text="@string/save_settings"
+            android:textColor="#FFFFFF" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
