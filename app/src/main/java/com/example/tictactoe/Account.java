@@ -35,11 +35,6 @@ public class Account extends AppCompatActivity {
     MaterialButton loginbtn;
     Button signUpButton, forgotpwdButton;
     DBHelper DB;
-    GoogleSignInOptions gso;
-    GoogleSignInClient gsc;
-    ImageView googleButton;
-    ImageView facebookButton;
-    CallbackManager callbackManager;
 
     private SharedPreference sharedPreference;
     public Boolean loggedInLocal = false;
@@ -55,49 +50,10 @@ public class Account extends AppCompatActivity {
 
         sharedPreference = new SharedPreference();
 
-        //Declarations for Google Sign in
-        googleButton = findViewById(R.id.googleButton);
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        gsc = GoogleSignIn.getClient(this, gso);
-
-        //Declarations for Facebook Sign in
-        facebookButton = findViewById(R.id.facebookButton);
-        callbackManager = CallbackManager.Factory.create();
-
-        LoginManager.getInstance().registerCallback(callbackManager,
-                new FacebookCallback<LoginResult>() {
-                    @Override
-                    public void onSuccess(LoginResult loginResult) {
-                        navigateToUserActivity();
-                    }
-
-                    @Override
-                    public void onCancel() {
-                        // App code
-                    }
-
-                    @Override
-                    public void onError(FacebookException exception) {
-                        // App code
-                    }
-                });
-
-        //If already logged in with Google account, jump to User activity
-        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-        if (acct!=null) {
-            navigateToUserActivity();
-        }
-
         //If already logged in with local account, jump to User activity
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         loggedInLocal = sharedPreferences.getBoolean(LOGGEDINLOCAL, false);
         if (loggedInLocal) {
-            navigateToUserActivity();
-        }
-
-        //If already logged in with Facebook account, jump to User activity
-        AccessToken accessToken = AccessToken.getCurrentAccessToken();
-        if(accessToken != null && accessToken.isExpired() == false) {
             navigateToUserActivity();
         }
 
@@ -108,22 +64,6 @@ public class Account extends AppCompatActivity {
         signUpButton = (Button) findViewById(R.id.signUpButton);
         forgotpwdButton = (Button) findViewById(R.id.forgotpwd);
         DB = new DBHelper(this);
-
-        //Google login
-        googleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                singIn();
-            }
-        });
-
-        //Facebook login
-        facebookButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LoginManager.getInstance().logInWithReadPermissions(Account.this, Arrays.asList("public_profile"));
-            }
-        });
 
         //Local login
         loginbtn.setOnClickListener(new View.OnClickListener() {
@@ -168,27 +108,6 @@ public class Account extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //Google login
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1000) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-
-            try {
-                task.getResult(ApiException.class);
-                navigateToUserActivity();
-
-            } catch (ApiException e) {
-                Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
-            }
-        }
-
-        //Facebook login
-        callbackManager.onActivityResult(requestCode, resultCode, data);
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
     public void navigateToUserActivity() {
         finish();
         Intent intent = new Intent(this, User.class);
@@ -215,10 +134,5 @@ public class Account extends AppCompatActivity {
         finish();
         Intent intent = new Intent(this, AccountRecovery.class);
         startActivity(intent);
-    }
-
-    public void singIn() {
-        Intent singInIntent = gsc.getSignInIntent();
-        startActivityForResult(singInIntent, 1000);
     }
 }

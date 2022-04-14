@@ -40,14 +40,6 @@
             android:name=".Settings"
             android:exported="true" />
         <activity
-            android:name=".Game5x5"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true" />
-        <activity
-            android:name=".Game4x4"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true" />
-        <activity
             android:name=".Rules"
             android:exported="true" />
         <activity

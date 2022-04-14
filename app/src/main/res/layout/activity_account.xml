@@ -108,44 +108,4 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/socialMediaBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/others"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/soupofjustice"
-            android:gravity="center"
-            android:text="@string/textview_others_text"
-            android:textColor="#000000" />
-
-        <LinearLayout
-            android:id="@+id/socialIcons"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/googleButton"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="20dp"
-                android:src="@drawable/google" />
-
-            <ImageView
-                android:id="@+id/facebookButton"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="20dp"
-                android:src="@drawable/fb" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
 </RelativeLayout>

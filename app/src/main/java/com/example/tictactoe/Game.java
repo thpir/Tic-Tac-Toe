@@ -31,12 +31,12 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
     private String TEXTVIEWPLAYER2;
     private boolean switch1OnOff;
     private boolean switch2OnOff;
-    public boolean loggedIn;
+    public boolean loggedInLocal;
     public String activeUser;
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String SWITCH1 = "switch1";
     public static final String SWITCH2 = "switch2";
-    public static final String LOGGEDIN   = "loggedIn";
+    public static final String LOGGEDINLOCAL   = "loggedInLocal";
     public static final String ACTIVEUSER = "activeUser";
 
     GridLayout myGridLayout;
@@ -88,10 +88,10 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         textViewPlayer2 = findViewById(R.id.text_view_p2);
         textViewPlayer1.setBackgroundColor(Color.rgb(0, 153, 204));
 
-        loggedIn = sharedPreferences.getBoolean(LOGGEDIN, false);
+        loggedInLocal = sharedPreferences.getBoolean(LOGGEDINLOCAL, false);
         activeUser = sharedPreferences.getString(ACTIVEUSER, "");
 
-        if (loggedIn) {
+        if (loggedInLocal) {
             TEXTVIEWPLAYER1 = activeUser + " (=x): ";
             textViewPlayer1.setText(TEXTVIEWPLAYER1 + " 0");
         } else {

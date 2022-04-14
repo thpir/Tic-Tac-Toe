@@ -17,8 +17,6 @@ import com.example.tictactoe.utils.SharedPreference;
 
 public class Settings extends AppCompatActivity {
 
-
-    private String text;
     private Button button;
     private Switch switch1;
     private Switch switch2;
@@ -42,18 +40,9 @@ public class Settings extends AppCompatActivity {
         switch2 = findViewById(R.id.switch2);
         sharedPreference = new SharedPreference();
 
-        Spinner mySpinner = (Spinner) findViewById(R.id.spinner1);
-
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this,
-                R.layout.my_spinner, getResources().getStringArray(R.array.gridSizes));
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mySpinner.setAdapter(myAdapter);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                text = mySpinner.getSelectedItem().toString();
-                sharedPreference.save(context, text);
                 saveDataSwitches();
             }
         });

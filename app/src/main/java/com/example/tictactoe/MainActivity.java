@@ -35,17 +35,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sharedPreference = new SharedPreference();
-                text = sharedPreference.getValue(context);
-                if ("3x3".equals(text)) {
-                    startGame();
-                } else if ("4x4".equals(text)) {
-                    startGame4x4();
-                } else if ("5x5".equals(text)) {
-                    startGame5x5();
-                } else {
-                    startGame();
-                }
+                startGame();
             }
         });
 
@@ -71,16 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void startGame() {
         Intent intent = new Intent(this, Game.class);
-        startActivity(intent);
-    }
-
-    public void startGame4x4() {
-        Intent intent = new Intent(this, Game4x4.class);
-        startActivity(intent);
-    }
-
-    public void startGame5x5() {
-        Intent intent = new Intent(this, Game5x5.class);
         startActivity(intent);
     }
 
