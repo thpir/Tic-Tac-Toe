@@ -4,31 +4,22 @@
     <string name="player_2_o">Player 2 (=O):</string>
     <string name="reset">reset</string>
     <string name="welcome_to_tic_tac_toe">Welcome to Tic Tac Toe</string>
-    <string name="select_grid_size">Select Grid Size:</string>
     <string name="save_settings">Save Settings</string>
     <string name="enable_screen_always_on">Enable \'screen always on\'</string>
-    <string name="enable_single_player_mode">Enable \'single player mode\'</string>
-    <string name="start_new_game">Start new game!</string>
+    <string name="enable_single_player_mode">Enable \'single player mode\'</string><![CDATA[
+
     />
 
-    <string-array name="gridSizes">
-        <item>"Click here"</item>
-        <item>3x3</item>
-        <item>4x4</item>
-        <item>5x5</item>
-    </string-array>
-    <string name="facebook_app_id">3076552329267857</string>
-    <string name="fb_login_protocol_scheme">fb3076552329267857</string>
+    ]]>
     <string name="textview_sign_in_text">Sign in</string>
     <string name="edittext_username_hint">Username</string>
     <string name="edittext_password_hint">Password</string>
     <string name="button_login_text">LOGIN</string>
     <string name="button_forgot_password_text">Forgot password?</string>
     <string name="button_sign_up_text">SIGN UP</string>
-    <string name="textview_others_text">or sign in with</string>
     <string name="textview_password_recovery_text">Password recovery</string>
     <string name="edittext_email_hint">Email</string>
-    <string name="edittext_recovery_question_hint">Enter the name of your first love...</string>
+    <string name="edittext_recovery_question_hint">Enter the name of your first love…</string>
     <string name="button_submit_text">SUBMIT</string>
     <string name="button_start_game_text">start game!</string>
     <string name="textview_settings_text">Settings</string>
@@ -42,4 +33,6 @@
     <string name="button_log_in_instead_text">Log in instead</string>
     <string name="textview_welcome_text">Welcome</string>
     <string name="button_logout_text">LOGOUT</string>
+    <string name="a_funny_background">A funny background</string>
+    <string name="just_a_button">Just a button</string>
 </resources>

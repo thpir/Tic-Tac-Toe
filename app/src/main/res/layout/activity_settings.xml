@@ -6,52 +6,42 @@
     android:background="@drawable/loginbackground"
     tools:context=".Settings">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp">
+        android:layout_height="wrap_content">
 
-        <ScrollView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/soupofjustice"
+                android:gravity="left"
+                android:text="@string/enable_single_player_mode"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                tools:ignore="RtlHardcoded,UseSwitchCompatOrMaterialXml" />
 
-                <Switch
-                    android:id="@+id/switch1"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:fontFamily="@font/soupofjustice"
-                    android:gravity="left"
-                    android:text="@string/enable_single_player_mode"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    tools:ignore="RtlHardcoded,UseSwitchCompatOrMaterialXml" />
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/switch1"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/soupofjustice"
+                android:gravity="left"
+                android:text="@string/enable_screen_always_on"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                tools:ignore="RtlHardcoded,UseSwitchCompatOrMaterialXml" />
 
-                <Switch
-                    android:id="@+id/switch2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/switch1"
-                    android:layout_margin="20dp"
-                    android:fontFamily="@font/soupofjustice"
-                    android:gravity="left"
-                    android:text="@string/enable_screen_always_on"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    tools:ignore="RtlHardcoded,UseSwitchCompatOrMaterialXml" />
+        </RelativeLayout>
 
-            </RelativeLayout>
-
-        </ScrollView>
-
-    </LinearLayout>
+    </ScrollView>
 
     <RelativeLayout
         android:layout_width="match_parent"
